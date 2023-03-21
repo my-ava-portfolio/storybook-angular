@@ -20,7 +20,7 @@ export default class ButtonComponent {
   primary = false;
 
   /**
-   * What background color to use
+   * What background color to use 
    */
   @Input()
   backgroundColor?: string;
