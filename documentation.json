@@ -22,7 +22,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-9635f47693c27a89099a5195493b902199e64c1cf804f83d24bed5640588aeb2581993914d7658af4b03a2ca23e1772b5e2c79f8dcb7e4ede0547d3020b748a7",
+            "id": "component-AppComponent-4942b25ff9644cb74afa5ba006835f0022332d9719e017be5439f7e51ae39f7ae51649fb98eb3bb22b87dee08be22070dfb38bb5eeada34fb3d2042dc669bb9c",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -31,7 +31,7 @@
             "providers": [],
             "selector": "app-root",
             "styleUrls": [
-                "./app.component.sass"
+                "./app.component.scss"
             ],
             "styles": [],
             "templateUrl": [
@@ -60,12 +60,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.sass']\n})\nexport class AppComponent {\n  title = 'ava-angular-ui';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'ava-angular-ui';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./app.component.sass"
+                    "styleUrl": "./app.component.scss"
                 }
             ],
             "stylesData": "",
@@ -194,6 +194,85 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ButtonContentComponent",
+            "id": "component-ButtonContentComponent-98340618462fc18de7435f3d886a45bc022b8063c202f0f5d588ccf84cbe006768367625552c1bcd38531ff9126abdf1a84d27e6753f66287a23318265a1b6b1",
+            "file": "src/stories/button-content/button-content.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "set-button-content",
+            "styleUrls": [
+                "./button-content.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-content.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "colorClasses",
+                    "defaultValue": "'btn-primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"btn-primary\" | \"btn-secondary\"",
+                    "decorators": []
+                },
+                {
+                    "name": "isSmall",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'A button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'set-button-content',\r\n  templateUrl: './button-content.component.html',\r\n  styleUrls: ['./button-content.component.scss']\r\n})\r\nexport class ButtonContentComponent {\r\n\r\n  @Input()\r\n  colorClasses: 'btn-primary' | 'btn-secondary' = 'btn-primary';\r\n\r\n  @Input()\r\n  isSmall: boolean = false;\r\n\r\n  @Input()\r\n  label = 'A button';\r\n\r\n  public get classes(): string[] {\r\n    const smallButton = this.isSmall ? 'btn-sm' : ''\r\n\r\n    return [this.colorClasses, smallButton];\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button-content.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 19
+                    }
+                }
+            },
+            "templateData": "<a class=\"m-1 btn\" [ngClass]=\"classes\">\r\n  {{ label }}\r\n</a>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -498,6 +577,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/button-content/button-content.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -546,6 +635,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/button-content/button-content.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonContentComponent>",
+                "defaultValue": "(args: ButtonContentComponent) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -667,6 +766,28 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "src/stories/button-content/button-content.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button-content/button-content.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/button-content/button-content.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonContentComponent>",
+                    "defaultValue": "(args: ButtonContentComponent) => ({\n  props: args,\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -688,7 +809,7 @@
         ]
     },
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -815,6 +936,35 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button-content/button-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button-content/button-content.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button-content/button-content.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
