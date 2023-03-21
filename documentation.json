@@ -197,7 +197,7 @@
         },
         {
             "name": "ButtonContentComponent",
-            "id": "component-ButtonContentComponent-98340618462fc18de7435f3d886a45bc022b8063c202f0f5d588ccf84cbe006768367625552c1bcd38531ff9126abdf1a84d27e6753f66287a23318265a1b6b1",
+            "id": "component-ButtonContentComponent-e15c3dd4b2c986c3ca3ede2b01d7e02e69a646684357fa3a063555db88e9468149196d96c20968141a9ba371673e45da989f742910c398576d44af539771075e",
             "file": "src/stories/button-content/button-content.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -215,12 +215,12 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "colorClasses",
-                    "defaultValue": "'btn-primary'",
+                    "name": "colorClasse",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "\"btn-primary\" | \"btn-secondary\"",
+                    "type": "\"primary\" | \"secondary\"",
                     "decorators": []
                 },
                 {
@@ -252,7 +252,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'set-button-content',\r\n  templateUrl: './button-content.component.html',\r\n  styleUrls: ['./button-content.component.scss']\r\n})\r\nexport class ButtonContentComponent {\r\n\r\n  @Input()\r\n  colorClasses: 'btn-primary' | 'btn-secondary' = 'btn-primary';\r\n\r\n  @Input()\r\n  isSmall: boolean = false;\r\n\r\n  @Input()\r\n  label = 'A button';\r\n\r\n  public get classes(): string[] {\r\n    const smallButton = this.isSmall ? 'btn-sm' : ''\r\n\r\n    return [this.colorClasses, smallButton];\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'set-button-content',\r\n  templateUrl: './button-content.component.html',\r\n  styleUrls: ['./button-content.component.scss']\r\n})\r\nexport class ButtonContentComponent {\r\n\r\n  @Input()\r\n  colorClasse: 'primary' | 'secondary' = 'primary';\r\n\r\n  @Input()\r\n  isSmall: boolean = false;\r\n\r\n  @Input()\r\n  label = 'A button';\r\n\r\n  public get classes(): string[] {\r\n    const smallButton = this.isSmall ? 'btn-sm' : ''\r\n    const colorButton = 'btn-' + this.colorClasse\r\n\r\n    return [colorButton, smallButton];\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {

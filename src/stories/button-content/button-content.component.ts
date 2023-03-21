@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ButtonContentComponent {
 
   @Input()
-  colorClasses: 'btn-primary' | 'btn-secondary' = 'btn-primary';
+  colorClasse: 'primary' | 'secondary' = 'primary';
 
   @Input()
   isSmall: boolean = false;
@@ -18,8 +18,9 @@ export class ButtonContentComponent {
 
   public get classes(): string[] {
     const smallButton = this.isSmall ? 'btn-sm' : ''
+    const colorButton = 'btn-' + this.colorClasse
 
-    return [this.colorClasses, smallButton];
+    return [colorButton, smallButton];
   }
 
 }
