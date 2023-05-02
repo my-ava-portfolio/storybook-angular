@@ -1,14 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { faHome, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'set-button-content',
-  templateUrl: './button-content.component.html',
-  styleUrls: ['./button-content.component.scss']
+  selector: 'set-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss']
 })
-export class ButtonContentComponent {
-  homeIcon= faHome
-  closeIcon= faTimes
+export class ButtonComponent {
+
   @Input()
   colorClass: 'primary' | 'secondary' = 'primary';
 
